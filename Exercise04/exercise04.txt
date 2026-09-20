@@ -1,1 +1,13 @@
+IT24101656
+PC_Lab 05 (Exercise 04)
 
+
+1. Describe how the threads are generated for this code.
+
+#pragma omp parallel for distributes the outer r loop among the 4 threads. 
+Each thread gets some r values, and for each assigned r value it runs all 10 k iterations.
+
+2. When you replace the code below with #pragma omp parallel for collapse(2) how are the threads generated.
+
+When collapse(2) is used, OpenMP combines both the r and k loops into one larger iteration space. 
+Since there are 5 × 10 = 50 combinations, these 50 iterations are distributed among the 4 threads.

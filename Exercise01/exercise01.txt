@@ -1,0 +1,13 @@
+IT24101656
+PC_Lab 05 (Exercise 01)
+
+
+1. Describe how the pragma omp barrier command works in this program.
+
+#pragma omp parallel creates 4 threads, and each thread first prints its thread number.
+
+#pragma omp barrier makes all the threads wait at that point until every thread reaches the barrier.
+
+So, all the "thread # n" messages will be printed before the "Outside Barrier" and "Hi again" messages continue.
+
+After the barrier, all the threads continue running, so the order of those messages can still be different each time.

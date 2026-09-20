@@ -1,1 +1,11 @@
+IT24101656
+PC_Lab 05 (Exercise 02)
 
+
+1. Describe how the pragma omp single command works in this program.
+
+#pragma omp single allows only one thread to execute the code inside the single block, while the other threads skip it.
+
+The thread that reaches the single section first executes it, so "Inside Single" and "Exiting Single" are printed only once.
+
+After the single block, the threads wait for the single thread to finish before continuing, because there is an implicit barrier at the end of single.

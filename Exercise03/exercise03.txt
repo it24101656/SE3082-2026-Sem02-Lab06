@@ -1,1 +1,11 @@
+IT24101656
+PC_Lab 05 (Exercise 03)
 
+
+1. Describe how the pragma omp master command works in this program.
+
+#pragma omp master allows only the master thread (thread 0) to execute the code inside the block, while the other threads skip it.
+
+So, "Inside Master" and "Exiting Master" are printed only once by thread 0.
+
+Unlike single, there is no implicit barrier at the end of master, so the other threads do not have to wait for the master thread before continuing.
